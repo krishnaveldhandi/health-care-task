@@ -1,0 +1,41 @@
+<!-- 
+ <app-click></app-click>  -->
+<header>
+  <link
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-3">
+        <div class="logo-container">
+          <img src="assets/doc5.jpg" alt="" class="logo" />
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-9 col-9 text-end">
+        <div class="menu-icon">
+          <i class="bi bi-list"></i>
+        </div>
+        <div class="desktop-menu">
+          <ul>
+            <li *ngFor="let router of routerData">
+              <a [routerLink]="router.path" routerLinkActive="active">{{
+                router.label
+              }}</a>
+            </li>
+            <!-- <li>
+              <a routerLink="/doctors" routerLinkActive="active"
+                >Doctors List</a
+              >
+            </li>
+            <li>Appointment</li>
+            <li>Contact</li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<router-outlet></router-outlet>
