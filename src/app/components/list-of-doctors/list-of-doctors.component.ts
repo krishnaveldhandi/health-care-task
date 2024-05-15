@@ -4,9 +4,9 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import { ListOfDoctorsService } from '../list-of-doctors.service';
+import { ListOfDoctorsService } from '../../list-of-doctors.service';
 import { CommonModule } from '@angular/common';
-import { appConfig } from '../app.config';
+import { appConfig } from '../../app.config';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 

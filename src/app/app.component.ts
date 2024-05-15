@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ListOfDoctorsComponent } from "./list-of-doctors/list-of-doctors.component";
+import { ListOfDoctorsComponent } from "./components/list-of-doctors/list-of-doctors.component";
 import { HeaderComponent } from './components/header/header.component';
 // import{Brow}
 @Component({
