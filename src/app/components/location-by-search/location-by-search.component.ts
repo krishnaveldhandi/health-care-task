@@ -8,11 +8,10 @@ import {
 } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 
-
 @Component({
   selector: 'app-location-by-search',
   standalone: true,
-  imports: [ GoogleMapsModule,CommonModule],
+  imports: [GoogleMapsModule, CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './location-by-search.component.html',
   styleUrl: './location-by-search.component.scss',

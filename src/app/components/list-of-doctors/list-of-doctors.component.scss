@@ -1,28 +1,27 @@
 $-mdc-filled-text-field-container-color: #95b6bd;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 .wrapper {
   padding: 20px;
 }
 
-.heading{
+.heading {
   background-color: #95b6bd;
   padding: 13px 0px 1px 12px;
-  // margin-top: 25px;
-  // margin-bottom: ;
   text-align: center;
   color: black;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1) !important;
   border-radius: 2px;
-  
+
 
 }
 
-h1{
+h1 {
   font-size: 2rem;
   font-weight: 600;
   font-family: 'Times New Roman', Times, serif;
-  // text-decoration: underline;
 }
+
 
 table {
   width: 100%;
@@ -31,13 +30,13 @@ table {
 
 .search {
   margin-bottom: 20px;
-  // border-radius: 12px;
 }
 
 .table-container {
   width: 100%;
   overflow-x: auto;
 }
+
 .mat-mdc-form-field {
   font-size: 14px;
   width: 100%;
@@ -56,6 +55,9 @@ th {
 th {
   background-color: #95b6bd !important;
   color: black;
+  font-family: Quicksand;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 td {

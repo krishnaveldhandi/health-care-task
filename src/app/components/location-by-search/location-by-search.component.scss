@@ -1,68 +1,65 @@
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: lightblue;
 }
+
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  max-width: 1500px;
+  max-width: 100%;
   margin: 0 auto;
-  background-color:whitesmoke;
+  background-color: whitesmoke;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
-  height: 465px;
-
 }
-.info {
-  width: 45%;
-  padding-right: 20px;
 
+.info {
+  width: 90%;
+  max-width: 600px;
+  padding-right: 20px;
+  text-align: center;
 }
 
 .info img {
   width: 100px;
   height: auto;
-  float: left;
+  margin-bottom: 20px;
   margin-right: 20px;
-  margin-top: -150px;
-
 }
+
 #map {
   height: 400px;
-  width: 50%;
+  width: 90%;
+  max-width: 800px;
   background-color: #eaeaea;
 }
 
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1500px;
+    height: auto;
+  }
 
-div > div:first-child {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-}
+  .info {
+    width: 45%;
+    text-align: left;
+  }
 
-
-input[type="text"] {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-right: 10px;
-}
-
-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
+  #map {
+    width: 50%;
+  }
 }
 
 input[type="text"] {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -70,21 +67,20 @@ input[type="text"] {
   margin-right: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s ease;
-  background-color:whitesmoke;
+  background-color: whitesmoke;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 input[type="text"]:focus {
-  border-color:black;
+  border-color: black;
   outline: none;
 }
-
 
 button {
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
-  background-color:lightseagreen;
+  background-color: lightseagreen;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -93,27 +89,42 @@ button {
 }
 
 button:hover {
-  background-color:lightslategray;
+  background-color: lightslategray;
 }
-
 
 h3 {
   font-size: 20px;
-
-  color:brown;
+  color: brown;
   margin-bottom: 15px;
   margin-top: 20px;
   font-weight: bold;
 }
 
-
 h3 p {
   font-size: 15px;
-  color:black;
+  color: black;
   line-height: 1.6;
   margin: 10px 0;
-  font-family:'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
 }
 
+div>div:first-child {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+}
 
+@media (min-width: 1024px) {
+  div>div:first-child {
+    flex-direction: row;
+  }
+}
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}

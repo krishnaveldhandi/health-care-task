@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+
+.wrapper {
+    padding: 20px;
+}
+
+
+.search {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search {
+    margin-bottom: 20px;
+    // border-radius: 12px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+    border-radius: 12px !important;
+}
+
+.mdc-text-field--filled {
+    border-radius: 25px !important;
+}
+
+td,
+th {
+    width: 15%;
+    // height: 10px !important;
+}
+
+th {
+    background-color: #95b6bd !important;
+    color: black;
+    font-family: Quicksand;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+td {
+    background-color: white !important;
+    color: black;
+    height: 15px;
+}
+
+
+
+.paginator {
+    margin-top: 20px;
+}
+
+tr:nth-child(even) td {
+    background-color: #daf0ee !important;
+}
+
+
+.example-spacer {
+    flex: 1 1 auto;
+    margin-right: 12px !important;
+
+}
+
+
+.mat-toolbar button {
+    margin-right: 12px;
+    margin-top: -10px;
+}
