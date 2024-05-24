@@ -1,0 +1,106 @@
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7fa2a9;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.card-title {
+    margin: 0;
+}
+
+.card-buttons button {
+    margin-left: 8px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.form-field {
+    flex: 1 1 calc(50% - 16px);
+    margin-right: 16px;
+}
+
+.form-field.gender-field {
+    width: 49.5%;
+}
+
+.form-field.country-field {
+    width: 49.5%;
+}
+
+.form-field:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .form-field {
+        flex: 1 1 100%;
+        margin-right: 0;
+    }
+}
+
+.section-header {
+    background-color: #7fa2a9;
+    color: #fff;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.specializations-header {
+    margin-bottom: 16px;
+}
+
+.specialization-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form-index {
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.specialization-row .form-field {
+    flex: 1 1 calc(33.333% - 16px);
+    margin-right: 16px;
+}
+
+.specialization-row .form-field:last-child {
+    margin-right: 0;
+}
+
+
+@media (max-width: 768px) {
+    .specialization-row .form-field {
+        flex: 1 1 100%;
+        margin-right: 0;
+    }
+
+    .form-field.gender-field {
+        width: 100%;
+    }
+
+    .form-field.country-field {
+        width: 100%;
+    }
+
+}

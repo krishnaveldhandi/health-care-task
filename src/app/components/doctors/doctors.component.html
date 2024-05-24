@@ -1,0 +1,141 @@
+<mat-card>
+  <div class="card-header">
+    <div class="card-title">Doctor</div>
+    <div class="card-buttons">
+      <div *ngIf="isView && id">
+        <button mat-icon-button (click)="navigateToEdit()">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="delete()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <div *ngIf="!isView">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="isSubmitted || isView"
+        >
+          Submit
+        </button>
+        <button
+          mat-raised-button
+          color="secondary"
+          type="button"
+          (click)="navigateToView()"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+  <mat-card-content>
+    <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <mat-form-field class="form-field">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" required />
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" required />
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field class="form-field">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" required />
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <mat-label>Phone</mat-label>
+          <input matInput type="tel" formControlName="phone" required />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="form-field gender-field">
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender" required>
+          <mat-option value="MALE">Male</mat-option>
+          <mat-option value="FEMALE">Female</mat-option>
+          <mat-option value="OTHER">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div formGroupName="address">
+        <div class="section-header">
+          <mat-card-title>ADDRESS:</mat-card-title>
+        </div>
+        <div class="form-row">
+          <mat-form-field class="form-field">
+            <mat-label>Street</mat-label>
+            <input matInput formControlName="street" required />
+          </mat-form-field>
+
+          <mat-form-field class="form-field">
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city" required />
+          </mat-form-field>
+        </div>
+        <div class="form-row">
+          <mat-form-field class="form-field">
+            <mat-label>State</mat-label>
+            <input matInput formControlName="state" required />
+          </mat-form-field>
+
+          <mat-form-field class="form-field">
+            <mat-label>PinCode</mat-label>
+            <input matInput formControlName="zip" required />
+          </mat-form-field>
+        </div>
+
+        <mat-form-field class="form-field country-field">
+          <mat-label>Country</mat-label>
+          <input matInput formControlName="country" required />
+        </mat-form-field>
+      </div>
+
+      <div formArrayName="specializations">
+        <div class="section-header specializations-header">
+          <mat-card-title>SPECIALIZATIONS:</mat-card-title>
+          <button
+            mat-raised-button
+            color="primary"
+            type="button"
+            (click)="addSpecialization()"
+            [disabled]="isSubmitted || isView"
+          >
+            Add
+          </button>
+        </div>
+        <div
+          *ngFor="let specializationFrom of getSpecializations(); let i = index"
+          class="specialization-row"
+        >
+          <div class="form-row" [formGroup]="specializationFrom">
+            <div class="form-index">{{ i + 1 }}.</div>
+            <mat-form-field class="form-field">
+              <mat-label>Specialization Name</mat-label>
+              <input matInput formControlName="name" />
+            </mat-form-field>
+            <mat-form-field class="form-field">
+              <mat-label>Experience</mat-label>
+              <input matInput formControlName="experience" type="number" />
+            </mat-form-field>
+            <button
+              [disabled]="i == 0 || isSubmitted || isView"
+              mat-icon-button
+              type="button"
+              (click)="deleteSpecialization(i)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,111 @@
+<mat-card>
+  <div class="card-title">ADD DOCTORS</div>
+  <mat-card-content>
+    <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <mat-form-field class="form-field">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" required />
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" required />
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" required />
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field class="form-field">
+          <mat-label>Phone</mat-label>
+          <input matInput type="tel" formControlName="phone" required />
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gender" required>
+            <mat-option value="MALE">Male</mat-option>
+            <mat-option value="FEMALE">Female</mat-option>
+            <mat-option value="OTHER">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div formGroupName="address">
+        <div class="address-header">ADDRESS:</div>
+        <div class="form-row">
+          <mat-form-field class="form-field">
+            <mat-label>Street</mat-label>
+            <input matInput formControlName="street" required />
+          </mat-form-field>
+          <mat-form-field class="form-field">
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city" required />
+          </mat-form-field>
+          <mat-form-field class="form-field">
+            <mat-label>State</mat-label>
+            <input matInput formControlName="state" required />
+          </mat-form-field>
+        </div>
+        <div class="form-row">
+          <mat-form-field class="form-field">
+            <mat-label>PinCode</mat-label>
+            <input matInput formControlName="zip" required />
+          </mat-form-field>
+          <mat-form-field class="form-field">
+            <mat-label>Country</mat-label>
+            <input matInput formControlName="country" required />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div formArrayName="specializations">
+        <div class="specializations-header">
+          SPECIALIZATIONS:
+          <button
+            mat-raised-button
+            color="primary"
+            type="button"
+            (click)="addSpecialization()"
+            [disabled]="isSubmitted"
+          >
+            Add
+          </button>
+        </div>
+        <div
+          *ngFor="let specializationFrom of getSpecializations(); let i = index"
+        >
+          <div class="form-row" [formGroup]="specializationFrom">
+            <div>{{ i + 1 }}.</div>
+            <mat-form-field class="form-field">
+              <mat-label>Specialization Name</mat-label>
+              <input matInput formControlName="name" />
+            </mat-form-field>
+            <mat-form-field class="form-field">
+              <mat-label>Experience</mat-label>
+              <input matInput formControlName="experience" type="number" />
+            </mat-form-field>
+            <button
+              [disabled]="i == 0 || isSubmitted"
+              mat-icon-button
+              type="button"
+              (click)="deleteSpecialization(i)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="isSubmitted"
+      >
+        Submit
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

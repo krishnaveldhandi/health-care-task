@@ -10,6 +10,21 @@
     margin-bottom: 20px;
 }
 
+.header {
+    text-align: center;
+    // padding-top: 10px;
+    background-color: #95b6bd;
+    // font-family: 'Times New Roman' !important;
+    font-weight: 600;
+    padding: 13px 0px 1px 12px;
+    text-align: center;
+    color: black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 2px;
+    margin-bottom: 25px;
+    font-size: 1.7rem;
+}
+
 table {
     width: 100%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -60,6 +75,7 @@ td {
 
 .paginator {
     margin-top: 20px;
+    background-color: #95b6bd;
 }
 
 tr:nth-child(even) td {
